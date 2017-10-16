@@ -1,0 +1,783 @@
+<!DOCTYPE html>
+
+
+
+  
+
+
+<html class="theme-next gemini use-motion" lang="en">
+<head>
+  <!-- hexo-inject:begin --><!-- hexo-inject:end --><meta charset="UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1"/>
+<meta name="theme-color" content="#222">
+
+
+
+
+
+
+
+
+
+<meta http-equiv="Cache-Control" content="no-transform" />
+<meta http-equiv="Cache-Control" content="no-siteapp" />
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
+  
+  <link href="/lib/fancybox/source/jquery.fancybox.css?v=2.1.5" rel="stylesheet" type="text/css" />
+
+
+
+
+
+
+
+<link href="/lib/font-awesome/css/font-awesome.min.css?v=4.6.2" rel="stylesheet" type="text/css" />
+
+<link href="/css/main.css?v=5.1.3" rel="stylesheet" type="text/css" />
+
+
+  <link rel="apple-touch-icon" sizes="180x180" href="/images/apple-touch-icon-next.png?v=5.1.3">
+
+
+  <link rel="icon" type="image/png" sizes="32x32" href="/images/favicon-32x32-next.png?v=5.1.3">
+
+
+  <link rel="icon" type="image/png" sizes="16x16" href="/images/favicon-16x16-next.png?v=5.1.3">
+
+
+  <link rel="mask-icon" href="/images/logo.svg?v=5.1.3" color="#222">
+
+
+
+
+
+  <meta name="keywords" content="algorithms,coursera,notes," />
+
+
+
+
+
+
+
+
+
+
+<meta name="description" content="implement it in c++  part1 dynamic connectivityquick findquick unionimprovementsapplications     scienctific steps to developing a usable algorithmModle-&amp;gt;algorithm-&amp;gt;fast/efficiency-&amp;gt;address-&amp;">
+<meta name="keywords" content="algorithms,coursera,notes">
+<meta property="og:type" content="article">
+<meta property="og:title" content="algorithms-coursera(under construction)">
+<meta property="og:url" content="http://yoursite.com/2017/10/13/algorithms-coursera/index.html">
+<meta property="og:site_name" content="benenzhu | a cute pig">
+<meta property="og:description" content="implement it in c++  part1 dynamic connectivityquick findquick unionimprovementsapplications     scienctific steps to developing a usable algorithmModle-&amp;gt;algorithm-&amp;gt;fast/efficiency-&amp;gt;address-&amp;">
+<meta property="og:locale" content="en">
+<meta property="og:updated_time" content="2017-10-16T11:34:15.765Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="algorithms-coursera(under construction)">
+<meta name="twitter:description" content="implement it in c++  part1 dynamic connectivityquick findquick unionimprovementsapplications     scienctific steps to developing a usable algorithmModle-&amp;gt;algorithm-&amp;gt;fast/efficiency-&amp;gt;address-&amp;">
+
+
+
+<script type="text/javascript" id="hexo.configurations">
+  var NexT = window.NexT || {};
+  var CONFIG = {
+    root: '/',
+    scheme: 'Gemini',
+    version: '5.1.3',
+    sidebar: {"position":"left","display":"post","offset":12,"b2t":false,"scrollpercent":false,"onmobile":false},
+    fancybox: true,
+    tabs: true,
+    motion: {"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"slideDownIn","post_body":"slideDownIn","coll_header":"slideLeftIn","sidebar":"slideUpIn"}},
+    duoshuo: {
+      userId: '0',
+      author: 'Author'
+    },
+    algolia: {
+      applicationID: '',
+      apiKey: '',
+      indexName: '',
+      hits: {"per_page":10},
+      labels: {"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}
+    }
+  };
+</script>
+
+
+
+  <link rel="canonical" href="http://yoursite.com/2017/10/13/algorithms-coursera/"/>
+
+
+
+
+
+  <title>algorithms-coursera(under construction) | benenzhu | a cute pig</title><!-- hexo-inject:begin --><!-- hexo-inject:end -->
+  
+
+
+
+
+
+
+
+
+</head>
+
+<body itemscope itemtype="http://schema.org/WebPage" lang="en">
+
+  
+  
+    
+  
+
+  <!-- hexo-inject:begin --><!-- hexo-inject:end --><div class="container sidebar-position-left page-post-detail">
+    <div class="headband"></div>
+
+    <header id="header" class="header" itemscope itemtype="http://schema.org/WPHeader">
+      <div class="header-inner"><div class="site-brand-wrapper">
+  <div class="site-meta ">
+    
+
+    <div class="custom-logo-site-title">
+      <a href="/"  class="brand" rel="start">
+        <span class="logo-line-before"><i></i></span>
+        <span class="site-title">benenzhu | a cute pig</span>
+        <span class="logo-line-after"><i></i></span>
+      </a>
+    </div>
+      
+        <p class="site-subtitle">pig's growth diary</p>
+      
+  </div>
+
+  <div class="site-nav-toggle">
+    <button>
+      <span class="btn-bar"></span>
+      <span class="btn-bar"></span>
+      <span class="btn-bar"></span>
+    </button>
+  </div>
+</div>
+
+<nav class="site-nav">
+  
+
+  
+    <ul id="menu" class="menu">
+      
+        
+        <li class="menu-item menu-item-home">
+          <a href="/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-home"></i> <br />
+            
+            Home
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-about">
+          <a href="/about/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-user"></i> <br />
+            
+            About
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-archives">
+          <a href="/archives/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-archive"></i> <br />
+            
+            Archives
+          </a>
+        </li>
+      
+
+      
+    </ul>
+  
+
+  
+</nav>
+
+
+
+ </div>
+    </header>
+
+    <main id="main" class="main">
+      <div class="main-inner">
+        <div class="content-wrap">
+          <div id="content" class="content">
+            
+
+  <div id="posts" class="posts-expand">
+    
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2017/10/13/algorithms-coursera/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="benenzhu">
+      <meta itemprop="description" content="">
+      <meta itemprop="image" content="/images/avatar.gif">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="benenzhu | a cute pig">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">algorithms-coursera(under construction)</h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">Posted on</span>
+              
+              <time title="Post created" itemprop="dateCreated datePublished" datetime="2017-10-13T21:15:29+08:00">
+                2017-10-13
+              </time>
+            
+
+            
+
+            
+          </span>
+
+          
+
+          
+            
+          
+
+          
+          
+
+          
+            <span class="post-meta-divider">|</span>
+            <span class="page-pv"><i class="fa fa-file-o"></i>
+            <span class="busuanzi-value" id="busuanzi_value_page_pv" ></span>
+            </span>
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        <p>implement it in c++ </p>
+<h2 id="part1"><a href="#part1" class="headerlink" title="part1"></a>part1</h2><blockquote>
+<p>dynamic connectivity<br>quick find<br>quick union<br>improvements<br>applications   </p>
+</blockquote>
+<p>scienctific steps to developing a usable algorithm<br>Modle-&gt;algorithm-&gt;fast/efficiency-&gt;address-&gt;iterate the process<br><a id="more"></a> </p>
+<h2 id="Dynamic-connectivity"><a href="#Dynamic-connectivity" class="headerlink" title="Dynamic connectivity"></a>Dynamic connectivity</h2><p>union(0,1) command<br>find/connected(0,1) query<br>find a path in an graph<br>connections:<br>reflexive&amp;&amp;symmetic&amp;&amp;transitive<br>connected components<br>merge the commands </p>
+<p>public class UF<br>UF(int N)<br>void union<br>bool connected  </p>
+<p>the implementation for the code<br>remember in this course is that quadratic time is too slow<br>when get huge operations   </p>
+<p>quick-union is better thant quick-find<br>union operation is very easy to use<br>the find in the array access is too slow  </p>
+<p>a better implement is weighting<br>avoid put the larger trees lower<br>effect for the weighted quick union<br>check the sizes for the trees<br>much much better perfomence for it<br>lg N \’s time<br>proposition the lg times for it<br>that the problem scales<br>the path compressions in that<br>the single one-pass variant for it  </p>
+<p>from this we leared that quick algorithms is very important to use and is much better than a quick processing computers </p>
+<figure class="highlight c++"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div></pre></td><td class="code"><pre><div class="line"><span class="class"><span class="keyword">class</span> <span class="title">UF</span>&#123;</span></div><div class="line"><span class="keyword">public</span>:</div><div class="line">    <span class="built_in">vector</span>&lt;<span class="keyword">int</span>&gt; id;</div><div class="line">    <span class="keyword">int</span> size;</div><div class="line">    UF(<span class="keyword">int</span> n=<span class="number">0</span>)&#123;</div><div class="line">        id.resize(n);</div><div class="line">        <span class="keyword">for</span>(<span class="keyword">int</span> i=<span class="number">0</span>;i&lt;n;i++)&#123;</div><div class="line">            id[i]=i;</div><div class="line">        &#125;</div><div class="line">        size=n;</div><div class="line">    &#125;</div><div class="line">    <span class="function"><span class="keyword">bool</span> <span class="title">connected</span><span class="params">(<span class="keyword">int</span> p,<span class="keyword">int</span> q)</span></span>&#123;</div><div class="line">        <span class="keyword">return</span> id[p]==id[q];</div><div class="line">    &#125;</div><div class="line">    <span class="function"><span class="keyword">void</span> <span class="title">unions</span><span class="params">(<span class="keyword">int</span> p,<span class="keyword">int</span> q)</span></span>&#123;</div><div class="line">        <span class="keyword">int</span> pid =id[p];</div><div class="line">        <span class="keyword">int</span> qid =id[q];</div><div class="line">        <span class="keyword">for</span>(<span class="keyword">int</span> i=<span class="number">0</span>;i&lt;size;i++)&#123;</div><div class="line">            <span class="keyword">if</span>(id[i]==qid)id[i]=pid;</div><div class="line">        &#125;</div><div class="line">    &#125;</div><div class="line">&#125;;</div></pre></td></tr></table></figure>
+<figure class="highlight c++"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div><div class="line">25</div><div class="line">26</div><div class="line">27</div><div class="line">28</div><div class="line">29</div><div class="line">30</div><div class="line">31</div><div class="line">32</div><div class="line">33</div><div class="line">34</div><div class="line">35</div><div class="line">36</div><div class="line">37</div></pre></td><td class="code"><pre><div class="line"><span class="class"><span class="keyword">class</span> <span class="title">quickUF</span>&#123;</span></div><div class="line"><span class="keyword">public</span>:</div><div class="line">    <span class="built_in">vector</span>&lt;<span class="keyword">int</span>&gt; id;</div><div class="line">    <span class="keyword">int</span> size;</div><div class="line">    <span class="built_in">vector</span>&lt;<span class="keyword">int</span>&gt; sz; <span class="comment">// for the weighted quick union</span></div><div class="line">    quickUF(<span class="keyword">int</span> n):size(n)&#123;</div><div class="line">        id.resize(n);</div><div class="line">        sz.resize(n);</div><div class="line">        <span class="keyword">for</span>(<span class="keyword">int</span> i=<span class="number">0</span>;i&lt;n;i++)&#123;</div><div class="line">            id[i]=i;</div><div class="line">            sz[i]=<span class="number">1</span>;</div><div class="line">        &#125;</div><div class="line">    &#125;</div><div class="line">    <span class="function"><span class="keyword">int</span> <span class="title">root</span><span class="params">(<span class="keyword">int</span> i)</span></span>&#123;</div><div class="line">        <span class="keyword">while</span>(id[i]!=i)&#123;</div><div class="line">            id[i]=id[id[i]];  <span class="comment">// the only one-line code for weight-compresion</span></div><div class="line">            i=id[i];</div><div class="line">        &#125;</div><div class="line">        <span class="keyword">return</span> i;</div><div class="line">    &#125;</div><div class="line">    <span class="function"><span class="keyword">bool</span> <span class="title">connected</span><span class="params">(<span class="keyword">int</span> p,<span class="keyword">int</span> q)</span> </span>&#123;</div><div class="line">        <span class="keyword">return</span> root(p) == root(q);</div><div class="line">    &#125;</div><div class="line">    <span class="function"><span class="keyword">void</span> <span class="title">unions</span><span class="params">(<span class="keyword">int</span> p,<span class="keyword">int</span> q)</span></span>&#123;</div><div class="line">        <span class="keyword">int</span> i=root(q);</div><div class="line">        <span class="keyword">int</span> j=root(p);</div><div class="line">        <span class="keyword">if</span>(i!=j)&#123;</div><div class="line">            <span class="keyword">if</span>(sz[i]&lt;sz[j])&#123;</div><div class="line">                id[i]=id[j];</div><div class="line">                sz[j]+=sz[i];</div><div class="line">            &#125;<span class="keyword">else</span>&#123;</div><div class="line">                id[j]=id[i];</div><div class="line">                sz[i]+=sz[j];</div><div class="line">            &#125;</div><div class="line">        &#125;</div><div class="line">    &#125;</div><div class="line">&#125;;</div></pre></td></tr></table></figure>
+<figure class="highlight c++"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div></pre></td><td class="code"><pre><div class="line"><span class="function"><span class="keyword">int</span> <span class="title">main</span><span class="params">()</span></span>&#123;</div><div class="line">    fi;</div><div class="line">    <span class="keyword">int</span> n;<span class="built_in">cin</span>&gt;&gt;n;</div><div class="line">    <span class="function">UF <span class="title">uf</span><span class="params">(n)</span></span>;</div><div class="line">    <span class="keyword">int</span> p,q;</div><div class="line">    <span class="keyword">while</span>(<span class="built_in">cin</span>&gt;&gt;p&gt;&gt;q)&#123;</div><div class="line">        <span class="keyword">if</span>(!uf.connected(p,q))&#123;</div><div class="line">            uf.unions(p,q);</div><div class="line"><span class="comment">//            cout&lt;&lt;p&lt;&lt;" "&lt;&lt;q&lt;&lt;endl;</span></div><div class="line"><span class="comment">//            printf("%d %d\n",p,q);</span></div><div class="line">        &#125;</div><div class="line">    &#125;</div><div class="line">    n=uf.size;</div><div class="line">    <span class="keyword">int</span> cnt=<span class="number">0</span>;</div><div class="line"><span class="comment">//    for (int i = 0; i &lt; n; ++i) &#123;</span></div><div class="line"><span class="comment">//        cout&lt;&lt;i&lt;&lt;','&lt;&lt;uf.id[i]&lt;&lt;' ';</span></div><div class="line"><span class="comment">//        if(!(cnt%10))cout&lt;&lt;endl;</span></div><div class="line"><span class="comment">//    &#125;</span></div><div class="line">    <span class="built_in">cout</span>&lt;&lt;(<span class="keyword">double</span>)clock()/CLOCKS_PER_SEC;</div><div class="line">&#125;</div></pre></td></tr></table></figure>
+<p>the percolation simulation<br>connected by the open sites<br>is through the virtual sites and it’s through the quick union-find algorithms<br>the properties of this problemss  </p>
+<h2 id="unit2"><a href="#unit2" class="headerlink" title="unit2"></a>unit2</h2><p>analysis of the algorithms<br>the cast of characters<br>programmer clients<br>the running time<br>by the machine’s shortest time<br>compare it and the reasons to do<br>the algorithsm successes<br>fft program<br>n logN<br>N-body simulations<br>chanllenge for it is wheather it is<br>the scientific method for it to do<br>the hypothesize for the problem  </p>
+<p>the 3-5sum problem<br>the interger’s array ,count it<br>how much time it do </p>
+<p>the plot size for it<br>the log-log plot<br>for predictions for the seconds for the program<br>run program each time to find out the using of it<br>many dependent effects<br>predict what will happen<br>we can calculate the time it word for<br>look into the computer mannul to see what time it uses  </p>
+<p>the time for it is include the </p>
+<blockquote>
+<p>variable declaration<br>assignment satement<br>the compare<br>the equal assiment<br>array access<br>the increment  </p>
+</blockquote>
+<p>calculate the most expensive<br>the running time for it<br>ignore lower order terms<br>when N is large terms are negligible<br>when N is small, we don’t care it<br>so that\’s the frequency counts &amp;&amp;tilde notation<br>ln N-&gt; nature log N<br>some practice model to describ it;</p>
+<p>the best cases and the worst case<br>and the average case for it;<br>3-sum<br>the binarny search for it<br>different cases for it ,and it always run quickly<br>the theory of algorithms is to establish the difficulty of an problem </p>
+<p>find the optimal algorithms<br>the big theta asymptotic<br>big oh smaller<br>big  largers </p>
+<p>the upper bound<br>the brute-force algorithm<br>the lower bound and upper bound matches<br>that the brute-froce is match<br>the 3-sum<br>the upperbound and lowerbound<br>try to close the upperbound is our goal for it<br>start form it and try to find the upper bound for it;<br>the cavets for it ,the worst case for it<br>the factors for it is complicated<br>and often make mistakes for it  </p>
+<p>the basics base for it and the old machines<br>and the space for it is also important<br>the implimentation is important<br>the primitive types<br>the one-dimensional arrays<br>the two-dimensional arrays  </p>
+<p>go ahead and try to find a more memory usage for it<br>the bytes for it<br>the string has reference to array<br>the paddings in it round up to multiple of 8 bytes </p>
+<p>the example for weightedquickunionUF<br>in summary we can’t do more for the empirical analysis<br>the mathmatical models are rely on the comptures running it ,but using the scientific method, we can finally find a method to find the depedence for it in a particular system<br>and we can find a way to implements it on real machines to find the finally result for the implementations   </p>
+<h3 id="3"><a href="#3" class="headerlink" title="3"></a>3</h3><p>the basic data structures<br>the value operations ,<br>the Stack:examine the item most recently added LIFO<br>the Queue:examine the item least recently added FIFO<br>the deque and inque<br>copletly seperate the details and the implements<br>allows us to use it more efficiently </p>
+<h3 id="Stack"><a href="#Stack" class="headerlink" title="Stack"></a>Stack</h3><p>warmup API<br>stack of strings<br>take from the basic input and out it;  </p>
+<p>use a string to implements it;<br>if the string equals ‘-‘ pop string from stack and print;and otherwise push string onto stack</p>
+<p>the code for implements it<br>matainer it<br>in the inner calss for java  </p>
+<p>so use<br><figure class="highlight c++"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div></pre></td><td class="code"><pre><div class="line"><span class="function"><span class="keyword">int</span> <span class="title">main</span><span class="params">()</span></span>&#123;</div><div class="line">    sos <span class="built_in">stack</span>;</div><div class="line">    <span class="built_in">string</span> n;</div><div class="line">    <span class="keyword">while</span>(<span class="built_in">cin</span>&gt;&gt;n)&#123;</div><div class="line">        <span class="keyword">if</span>(n==<span class="string">"-"</span>)<span class="built_in">cout</span>&lt;&lt;<span class="built_in">stack</span>.pop();</div><div class="line">        <span class="keyword">else</span>    <span class="built_in">stack</span>.push(s);</div><div class="line">    &#125;</div><div class="line">&#125;</div></pre></td></tr></table></figure></p>
+<p>implements the stack<br>to the link list<br>throught the book to use this kind of code</p>
+<figure class="highlight c++"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div></pre></td><td class="code"><pre><div class="line"><span class="class"><span class="keyword">class</span> <span class="title">Node</span>&#123;</span></div><div class="line">    <span class="built_in">string</span> item;</div><div class="line">    Node next;</div><div class="line">&#125;</div><div class="line"><span class="built_in">string</span> pop&#123;</div><div class="line"><span class="comment">//save item to return </span></div><div class="line">String item=first.item;</div><div class="line"><span class="comment">//delete first node</span></div><div class="line">first=first.next;</div><div class="line"><span class="comment">//return saved item;</span></div><div class="line"><span class="keyword">return</span> item;</div><div class="line">&#125;</div><div class="line"><span class="function"><span class="keyword">void</span> <span class="title">push</span><span class="params">()</span></span>&#123;</div><div class="line"></div><div class="line">&#125;</div></pre></td></tr></table></figure>
+<p>using the code only for the first item to perform the things  </p>
+<p>the alternetive implementation for stack:<br>use array s[] to store N items on stack;<br>push: add new item at s[N];<br>pop: remove item from s[N-1];<br>so use N to store the size of N;</p>
+<p>the overflow and underflow of things<br>the Null items of it<br>loitering:  holding a refrence to and object when it’s </p>
+<p>Stack resizing-array implemetation<br>the implementation resize the array<br>repeated doubling resize the stack<br>the consequences for it<br>by the time it’s doubled inserting first N items<br>the array access =&gt; 3N<br>How to shrink array?<br>push pop the expensive is too;<br>the one-quarter full to resize the array ;<br>invariant : the array between the 25% to 50%<br>the array accessing not so often<br>but we gauratin the array access we use is good ;<br>it’s very quick proposions for it<br>-&gt;8N when full<br>tradeoffs for it ,it’s can be intercahngeably ,not to provide it;    </p>
+<h4 id="queue"><a href="#queue" class="headerlink" title="queue"></a>queue</h4><p>corrspond api for it to do<br>add the queue for is identical for it<br>save the item and populate the node<br>with these line of code ,we can do it;<br>our full implementation for it<br>the first item for it<br>not difficult to metain the size of it  </p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div><div class="line">25</div><div class="line">26</div><div class="line">27</div><div class="line">28</div><div class="line">29</div><div class="line">30</div><div class="line">31</div><div class="line">32</div><div class="line">33</div><div class="line">34</div><div class="line">35</div><div class="line">36</div><div class="line">37</div><div class="line">38</div><div class="line">39</div><div class="line">40</div><div class="line">41</div><div class="line">42</div><div class="line">43</div><div class="line">44</div><div class="line">45</div><div class="line">46</div><div class="line">47</div><div class="line">48</div><div class="line">49</div><div class="line">50</div><div class="line">51</div><div class="line">52</div><div class="line">53</div><div class="line">54</div><div class="line">55</div><div class="line">56</div><div class="line">57</div></pre></td><td class="code"><pre><div class="line">class LinkedStackOfStrings&#123;</div><div class="line">public:</div><div class="line">    class Node&#123;</div><div class="line">    public:</div><div class="line">        Node next;</div><div class="line">        string item;</div><div class="line">    &#125;;</div><div class="line">    Node first;// how to define the first item with null</div><div class="line">    bool isEmpty()&#123;</div><div class="line">        return first.item==&quot;&quot;;</div><div class="line">    &#125;</div><div class="line">    void push(string item)&#123;</div><div class="line">        Node oldfirst=first;</div><div class="line">        Node first;</div><div class="line">        first.item=item;</div><div class="line">        first.next=oldfirst;</div><div class="line">    &#125;</div><div class="line">    string pop()&#123;</div><div class="line">        string item=first.item;</div><div class="line">        first=first.next;</div><div class="line">        return item;</div><div class="line">    &#125;</div><div class="line">&#125;;</div><div class="line">class fixedCapacityOfStack&#123;</div><div class="line">public:</div><div class="line">    ve</div><div class="line">    int n;</div><div class="line">    fixedCapacityOfStack(int capacity)&#123;</div><div class="line">        s.resize(capacity);</div><div class="line">    &#125;</div><div class="line">&#125;;</div><div class="line"></div><div class="line"></div><div class="line"></div><div class="line">class queueOfString&#123;</div><div class="line">    //I just can&apos;t figure out waht</div><div class="line">public:</div><div class="line">    class Node&#123;</div><div class="line">        string node;</div><div class="line">        Node next;</div><div class="line">    &#125;;</div><div class="line">    Node first;</div><div class="line">    void enqueue(string item)&#123;</div><div class="line"></div><div class="line">    &#125;</div><div class="line">    string dequeue()&#123;</div><div class="line">        string item=first.item;</div><div class="line">        first=first.next;</div><div class="line">        return item;</div><div class="line">    &#125;</div><div class="line">    bool isEmpty()&#123;</div><div class="line"></div><div class="line">    &#125;</div><div class="line">    int size()&#123;</div><div class="line"></div><div class="line">    &#125;</div><div class="line">&#125;;</div></pre></td></tr></table></figure>
+      
+    </div>
+    
+    
+    
+
+    
+
+    
+
+    
+
+    <footer class="post-footer">
+      
+        <div class="post-tags">
+          
+            <a href="/tags/algorithms/" rel="tag"># algorithms</a>
+          
+            <a href="/tags/coursera/" rel="tag"># coursera</a>
+          
+            <a href="/tags/notes/" rel="tag"># notes</a>
+          
+        </div>
+      
+
+      
+      
+      
+
+      
+        <div class="post-nav">
+          <div class="post-nav-next post-nav-item">
+            
+              <a href="/2017/10/13/aoapc-6-egs/" rel="next" title="aoapc_$6_egs basic data structures(under construction)">
+                <i class="fa fa-chevron-left"></i> aoapc_$6_egs basic data structures(under construction)
+              </a>
+            
+          </div>
+
+          <span class="post-nav-divider"></span>
+
+          <div class="post-nav-prev post-nav-item">
+            
+              <a href="/2017/10/13/ipv6-hosts-add/" rel="prev" title="ipv6-hosts-add">
+                ipv6-hosts-add <i class="fa fa-chevron-right"></i>
+              </a>
+            
+          </div>
+        </div>
+      
+
+      
+      
+    </footer>
+  </div>
+  
+  
+  
+  </article>
+
+
+
+    <div class="post-spread">
+      
+    </div>
+  </div>
+
+
+          </div>
+          
+
+
+          
+
+  
+
+
+
+        </div>
+        
+          
+  
+  <div class="sidebar-toggle">
+    <div class="sidebar-toggle-line-wrap">
+      <span class="sidebar-toggle-line sidebar-toggle-line-first"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-middle"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-last"></span>
+    </div>
+  </div>
+
+  <aside id="sidebar" class="sidebar">
+    
+    <div class="sidebar-inner">
+
+      
+
+      
+        <ul class="sidebar-nav motion-element">
+          <li class="sidebar-nav-toc sidebar-nav-active" data-target="post-toc-wrap">
+            Table of Contents
+          </li>
+          <li class="sidebar-nav-overview" data-target="site-overview-wrap">
+            Overview
+          </li>
+        </ul>
+      
+
+      <section class="site-overview-wrap sidebar-panel">
+        <div class="site-overview">
+          <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
+            
+              <p class="site-author-name" itemprop="name">benenzhu</p>
+              <p class="site-description motion-element" itemprop="description">benenzhu | a cute pig</p>
+          </div>
+
+          <nav class="site-state motion-element">
+
+            
+              <div class="site-state-item site-state-posts">
+              
+                <a href="/archives/">
+              
+                  <span class="site-state-item-count">8</span>
+                  <span class="site-state-item-name">posts</span>
+                </a>
+              </div>
+            
+
+            
+
+            
+              
+              
+              <div class="site-state-item site-state-tags">
+                
+                  <span class="site-state-item-count">6</span>
+                  <span class="site-state-item-name">tags</span>
+                
+              </div>
+            
+
+          </nav>
+
+          
+
+          <div class="links-of-author motion-element">
+            
+          </div>
+
+          
+          
+
+          
+          
+
+          
+
+        </div>
+      </section>
+
+      
+      <!--noindex-->
+        <section class="post-toc-wrap motion-element sidebar-panel sidebar-panel-active">
+          <div class="post-toc">
+
+            
+              
+            
+
+            
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#part1"><span class="nav-number">1.</span> <span class="nav-text">part1</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Dynamic-connectivity"><span class="nav-number">2.</span> <span class="nav-text">Dynamic connectivity</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#unit2"><span class="nav-number">3.</span> <span class="nav-text">unit2</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#3"><span class="nav-number">3.1.</span> <span class="nav-text">3</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Stack"><span class="nav-number">3.2.</span> <span class="nav-text">Stack</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#queue"><span class="nav-number">3.2.1.</span> <span class="nav-text">queue</span></a></li></ol></li></ol></li></ol></div>
+            
+
+          </div>
+        </section>
+      <!--/noindex-->
+      
+
+      
+
+    </div>
+  </aside>
+
+
+        
+      </div>
+    </main>
+
+    <footer id="footer" class="footer">
+      <div class="footer-inner">
+        <div class="copyright">&copy; <span itemprop="copyrightYear">2017</span>
+  <span class="with-love">
+    <i class="fa fa-user"></i>
+  </span>
+  <span class="author" itemprop="copyrightHolder">benenzhu</span>
+
+  
+</div>
+
+
+  <div class="powered-by">Powered by <a class="theme-link" target="_blank" href="https://hexo.io">Hexo</a></div>
+
+
+
+  <span class="post-meta-divider">|</span>
+
+
+
+  <div class="theme-info">Theme &mdash; <a class="theme-link" target="_blank" href="https://github.com/iissnan/hexo-theme-next">NexT.Gemini</a> v5.1.3</div>
+
+
+
+
+        
+<div class="busuanzi-count">
+  <script async src="https://dn-lbstatics.qbox.me/busuanzi/2.3/busuanzi.pure.mini.js"></script>
+
+  
+    <span class="site-uv">
+      <i class="fa fa-user"></i>
+      <span class="busuanzi-value" id="busuanzi_value_site_uv"></span>
+      
+    </span>
+  
+
+  
+    <span class="site-pv">
+      <i class="fa fa-eye"></i>
+      <span class="busuanzi-value" id="busuanzi_value_site_pv"></span>
+      
+    </span>
+  
+</div>
+
+
+
+
+
+
+
+
+        
+      </div>
+    </footer>
+
+    
+      <div class="back-to-top">
+        <i class="fa fa-arrow-up"></i>
+        
+      </div>
+    
+
+    
+
+  </div>
+
+  
+
+<script type="text/javascript">
+  if (Object.prototype.toString.call(window.Promise) !== '[object Function]') {
+    window.Promise = null;
+  }
+</script>
+
+
+
+
+
+
+
+
+
+  
+
+
+
+
+
+
+
+
+
+
+
+
+  
+  
+    <script type="text/javascript" src="/lib/jquery/index.js?v=2.1.3"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/fastclick/lib/fastclick.min.js?v=1.0.6"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/jquery_lazyload/jquery.lazyload.js?v=1.9.7"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/velocity/velocity.min.js?v=1.2.1"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/velocity/velocity.ui.min.js?v=1.2.1"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/fancybox/source/jquery.fancybox.pack.js?v=2.1.5"></script>
+  
+
+
+  
+
+
+  <script type="text/javascript" src="/js/src/utils.js?v=5.1.3"></script>
+
+  <script type="text/javascript" src="/js/src/motion.js?v=5.1.3"></script>
+
+
+
+  
+  
+
+
+  <script type="text/javascript" src="/js/src/affix.js?v=5.1.3"></script>
+
+  <script type="text/javascript" src="/js/src/schemes/pisces.js?v=5.1.3"></script>
+
+
+
+  
+  <script type="text/javascript" src="/js/src/scrollspy.js?v=5.1.3"></script>
+<script type="text/javascript" src="/js/src/post-details.js?v=5.1.3"></script>
+
+
+
+  
+
+
+  <script type="text/javascript" src="/js/src/bootstrap.js?v=5.1.3"></script>
+
+
+
+  
+
+
+  
+
+
+
+
+	
+
+
+
+
+
+  
+
+
+
+
+
+  
+
+
+
+
+
+
+
+
+
+
+
+
+  
+
+
+
+
+
+  
+
+  
+
+  
+  
+
+  
+  
+    <script type="text/x-mathjax-config">
+      MathJax.Hub.Config({
+        tex2jax: {
+          inlineMath: [ ['$','$'], ["\\(","\\)"]  ],
+          processEscapes: true,
+          skipTags: ['script', 'noscript', 'style', 'textarea', 'pre', 'code']
+        }
+      });
+    </script>
+
+    <script type="text/x-mathjax-config">
+      MathJax.Hub.Queue(function() {
+        var all = MathJax.Hub.getAllJax(), i;
+        for (i=0; i < all.length; i += 1) {
+          all[i].SourceElement().parentNode.className += ' has-jax';
+        }
+      });
+    </script>
+    <script type="text/javascript" src="//cdn.bootcss.com/mathjax/2.7.1/latest.js?config=TeX-AMS-MML_HTMLorMML"></script><!-- hexo-inject:begin --><!-- hexo-inject:end -->
+  
+
+
+  
+
+  
+
+</body>
+</html>
