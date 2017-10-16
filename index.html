@@ -737,7 +737,7 @@
   
   
   <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2017/10/13/aoapc-6-egs/">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2017/10/13/aoapc/aoapc-$3/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="name" content="benenzhu">
@@ -756,7 +756,151 @@
         
           <h1 class="post-title" itemprop="name headline">
                 
-                <a class="post-title-link" href="/2017/10/13/aoapc-6-egs/" itemprop="url">aoapc_$6_egs basic data structures(under construction)</a></h1>
+                <a class="post-title-link" href="/2017/10/13/aoapc/aoapc-$3/" itemprop="url">aoapc_$3 arrays (under construction)</a></h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">Posted on</span>
+              
+              <time title="Post created" itemprop="dateCreated datePublished" datetime="2017-10-13T19:45:30+08:00">
+                2017-10-13
+              </time>
+            
+
+            
+
+            
+          </span>
+
+          
+
+          
+            
+          
+
+          
+          
+
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        
+          
+            <h4 id="The-head-file-in-this-quoto"><a href="#The-head-file-in-this-quoto" class="headerlink" title="The head file in this quoto"></a>The head file in this quoto</h4><figure class="highlight c++"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div><div class="line">25</div><div class="line">26</div><div class="line">27</div><div class="line">28</div><div class="line">29</div><div class="line">30</div><div class="line">31</div></pre></td><td class="code"><pre><div class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">&lt;cstdio&gt;</span></span></div><div class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">&lt;iostream&gt;</span></span></div><div class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">&lt;sstream&gt;</span></span></div><div class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">&lt;fstream&gt;</span></span></div><div class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">&lt;algorithm&gt;</span></span></div><div class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">&lt;string&gt;</span></span></div><div class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">&lt;vector&gt;</span></span></div><div class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">&lt;cstring&gt;</span></span></div><div class="line"><span class="meta">#<span class="meta-keyword">define</span> ff freopen(<span class="meta-string">"in"</span>,<span class="meta-string">"r"</span>,stdin);</span></div><div class="line"><span class="meta">#<span class="meta-keyword">define</span> fo freopen(<span class="meta-string">"ou"</span>,<span class="meta-string">"w"</span>,stdout);</span></div><div class="line"><span class="keyword">using</span> <span class="keyword">namespace</span> <span class="built_in">std</span>;</div><div class="line"><span class="keyword">typedef</span> <span class="keyword">long</span> <span class="keyword">long</span> ll;</div><div class="line"></div><div class="line"><span class="meta">#<span class="meta-keyword">define</span> fi fff();</span></div><div class="line"></div><div class="line"><span class="function"><span class="keyword">int</span> <span class="title">fff</span><span class="params">()</span></span>&#123;</div><div class="line">  <span class="function">ifstream <span class="title">fin</span><span class="params">(<span class="string">"in.js"</span>)</span></span>;</div><div class="line">  <span class="function">ofstream <span class="title">fout</span><span class="params">(<span class="string">"in"</span>)</span></span>;</div><div class="line">  <span class="built_in">string</span> LINE;</div><div class="line">  <span class="keyword">while</span>(getline(fin,LINE))&#123;</div><div class="line">    <span class="keyword">if</span>(LINE[<span class="number">0</span>]==<span class="string">'/'</span>)<span class="keyword">continue</span>;</div><div class="line">    <span class="keyword">else</span>&#123;<span class="keyword">if</span>(!LINE.empty())fout&lt;&lt;LINE&lt;&lt;<span class="built_in">endl</span>;&#125;;</div><div class="line">  &#125;</div><div class="line">  ff;</div><div class="line">  <span class="function">ifstream <span class="title">fin2</span><span class="params">(<span class="string">"in"</span>)</span></span>;</div><div class="line">  <span class="built_in">cout</span>&lt;&lt;<span class="string">"input file:--------------"</span>&lt;&lt;<span class="built_in">endl</span>;</div><div class="line">  <span class="keyword">while</span> (getline(fin2,LINE)) &#123;</div><div class="line">    <span class="built_in">cout</span> &lt;&lt; LINE &lt;&lt; <span class="built_in">endl</span>;</div><div class="line">  &#125;</div><div class="line">  <span class="built_in">cout</span>&lt;&lt;<span class="string">"--------------------------------"</span>&lt;&lt;<span class="built_in">endl</span>;</div><div class="line">&#125;</div></pre></td></tr></table></figure>
+<h4 id="1-Tex-Quotes"><a href="#1-Tex-Quotes" class="headerlink" title="1.Tex Quotes"></a>1.Tex Quotes</h4><p><a href="https://vjudge.net/contest/192174#problem" target="_blank" rel="external">uva 272</a></p>
+<blockquote>
+<p>even no need array ,only the flag to iterate the input<br>basically cause the input is legal<br><figure class="highlight c++"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div></pre></td><td class="code"><pre><div class="line"><span class="function"><span class="keyword">int</span> <span class="title">main</span><span class="params">()</span></span>&#123;</div><div class="line"><span class="comment">//  fi;</span></div><div class="line">  <span class="keyword">bool</span> flag= <span class="literal">true</span>; <span class="comment">//the quotes is not in</span></div><div class="line">  <span class="keyword">char</span> c;</div><div class="line">  <span class="comment">//when encounter with the blank space ,it's not good to use the cin to input the char ;</span></div><div class="line">  <span class="keyword">while</span>((c=getchar())!=EOF)&#123;</div><div class="line">    <span class="keyword">if</span>(<span class="string">'"'</span>==c)&#123;</div><div class="line">      <span class="built_in">cout</span>&lt;&lt;(flag?<span class="string">"``"</span>:<span class="string">"''"</span>);</div><div class="line">      flag=!flag;</div><div class="line">    &#125;<span class="keyword">else</span>&#123;</div><div class="line">      <span class="built_in">putchar</span>(c);</div><div class="line">    &#125;</div><div class="line">  &#125;</div><div class="line">  <span class="keyword">return</span> <span class="number">0</span>;</div><div class="line">&#125;</div></pre></td></tr></table></figure></p>
+</blockquote>
+<h4 id="B-gt-WERTYU"><a href="#B-gt-WERTYU" class="headerlink" title="B-&gt;WERTYU"></a>B-&gt;WERTYU</h4><p><a href="https://vjudge.net/contest/192174#problem/B" target="_blank" rel="external">uva 10082</a></p>
+<blockquote>
+<p>use the array to store it<br>and a flag to iterating it to get the answer<br><figure class="highlight c++"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div></pre></td><td class="code"><pre><div class="line"><span class="function"><span class="keyword">int</span> <span class="title">main</span><span class="params">()</span></span>&#123;</div><div class="line"><span class="comment">//  fi;</span></div><div class="line"><span class="comment">//  notice that for the capital letters;</span></div><div class="line">  <span class="keyword">char</span> keys[]=&#123;<span class="string">"`1234567890-=QWERTYUIOP[]\ASDFGHJKL;'ZXCVBNM,./"</span>&#125;;</div><div class="line">  <span class="keyword">char</span> c;</div><div class="line">  <span class="keyword">while</span>((c=getchar())!=EOF)&#123;</div><div class="line">    <span class="keyword">int</span> i;</div><div class="line">    <span class="keyword">for</span>(i=<span class="number">1</span>;i&lt;<span class="built_in">strlen</span>(keys);i++)&#123;</div><div class="line">      <span class="keyword">if</span>(c==keys[i]) <span class="keyword">break</span>;</div><div class="line">    &#125;</div><div class="line">    <span class="built_in">putchar</span>((keys[i]==c)?keys[i<span class="number">-1</span>]:c);</div><div class="line">  &#125;</div><div class="line">  <span class="keyword">return</span> <span class="number">0</span>;</div><div class="line">&#125;</div></pre></td></tr></table></figure></p>
+</blockquote>
+<h4 id="C-gt-Palindromes"><a href="#C-gt-Palindromes" class="headerlink" title="C-&gt;Palindromes"></a>C-&gt;Palindromes</h4><p><a href="https://vjudge.net/contest/192174#problem/C" target="_blank" rel="external">uva 401</a></p>
+<blockquote>
+<figure class="highlight c++"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div><div class="line">25</div><div class="line">26</div><div class="line">27</div><div class="line">28</div><div class="line">29</div><div class="line">30</div><div class="line">31</div><div class="line">32</div><div class="line">33</div></pre></td><td class="code"><pre><div class="line"><span class="function"><span class="keyword">int</span> <span class="title">main</span><span class="params">()</span></span>&#123;</div><div class="line"><span class="comment">//  fi;</span></div><div class="line">  <span class="keyword">char</span> rev[]=&#123;<span class="string">"A   3  HIL JM O   2TUVWXY51SE Z  8 "</span>&#125;;</div><div class="line">  <span class="keyword">int</span> cnt=<span class="number">0</span>;</div><div class="line"><span class="comment">//  for(char i='A';i&lt;='Z';i++)&#123;</span></div><div class="line"><span class="comment">//    if(rev[i-'A']!=' ')printf("%c-&gt; %c  ",i,rev[i-'A']);</span></div><div class="line"><span class="comment">//    if(!(++cnt%5))cout&lt;&lt;endl;</span></div><div class="line"><span class="comment">//  &#125;</span></div><div class="line"><span class="comment">//  for(int i=1;i&lt;10;i++)&#123;</span></div><div class="line"><span class="comment">//    if(rev[i+25]!=' ')printf("%d-&gt; %c  ",i,rev[i+25]);</span></div><div class="line"><span class="comment">//  &#125;</span></div><div class="line"><span class="comment">//  return 0;</span></div><div class="line">  <span class="built_in">string</span> o[]=&#123;<span class="string">"is not a palindrome."</span>,</div><div class="line">            <span class="string">"is a regular palindrome."</span>,</div><div class="line">            <span class="string">"is a mirrored string."</span>,</div><div class="line">            <span class="string">"is a mirrored palindrome."</span></div><div class="line">  &#125;;</div><div class="line">  <span class="built_in">string</span> s;</div><div class="line">  <span class="keyword">while</span>(getline(<span class="built_in">cin</span>,s))&#123;</div><div class="line">    <span class="keyword">int</span> m=<span class="number">1</span>,p=<span class="number">1</span>;<span class="keyword">int</span> l=s.length();</div><div class="line">    <span class="keyword">for</span>(<span class="keyword">int</span> i=<span class="number">0</span>;i&lt;(s.length()+<span class="number">1</span>)/<span class="number">2</span>;i++)&#123;</div><div class="line">      <span class="keyword">if</span>(s[i]!=s[l-i<span class="number">-1</span>])p=<span class="number">0</span>;</div><div class="line">      <span class="keyword">if</span>(<span class="built_in">isalpha</span>(s[i]))&#123;</div><div class="line">        <span class="keyword">if</span>(rev[ s[i]-<span class="string">'A'</span> ] != s[l-i<span class="number">-1</span>])m=<span class="number">0</span>;</div><div class="line">      &#125;<span class="keyword">else</span>&#123;</div><div class="line">        <span class="keyword">if</span>(rev[s[i]-<span class="string">'0'</span>+<span class="number">25</span>] != s[l-i<span class="number">-1</span>])m=<span class="number">0</span>;</div><div class="line">        <span class="comment">//not s[i] ....T_T..... NOTICE</span></div><div class="line">      &#125;</div><div class="line">    &#125;</div><div class="line">    <span class="built_in">cout</span>&lt;&lt;s&lt;&lt;<span class="string">" -- "</span>&lt;&lt;o[m*<span class="number">2</span>+p]&lt;&lt;<span class="built_in">endl</span>&lt;&lt;<span class="built_in">endl</span>;</div><div class="line">  &#125;</div><div class="line">  <span class="keyword">return</span> <span class="number">0</span>;</div><div class="line">&#125;</div></pre></td></tr></table></figure>
+</blockquote>
+<h4 id="D-Master-Mind-Hints"><a href="#D-Master-Mind-Hints" class="headerlink" title="D - Master-Mind Hints"></a>D - Master-Mind Hints</h4><p><a href="https://vjudge.net/contest/192174#problem/D" target="_blank" rel="external">uva 340</a></p>
+<blockquote>
+<figure class="highlight c++"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div><div class="line">25</div><div class="line">26</div><div class="line">27</div><div class="line">28</div><div class="line">29</div><div class="line">30</div><div class="line">31</div><div class="line">32</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">const</span> <span class="keyword">int</span> maxn=<span class="number">1000</span> + <span class="number">5</span>;</div><div class="line"><span class="keyword">int</span> a[maxn];</div><div class="line"><span class="keyword">int</span> b[maxn];</div><div class="line"><span class="function"><span class="keyword">int</span> <span class="title">main</span><span class="params">()</span> </span>&#123;</div><div class="line"><span class="comment">//  fi;</span></div><div class="line">  <span class="keyword">int</span> n, cnt = <span class="number">0</span>;</div><div class="line">  <span class="keyword">while</span> (<span class="built_in">scanf</span>(<span class="string">"%d"</span>,&amp;n)&amp;&amp;n) &#123;</div><div class="line">    <span class="built_in">printf</span>(<span class="string">"Game %d:\n"</span>, ++cnt);</div><div class="line">    <span class="keyword">for</span> (<span class="keyword">int</span> i = <span class="number">0</span>; i &lt; n; ++i) &#123;</div><div class="line">      <span class="built_in">cin</span> &gt;&gt; a[i];</div><div class="line">    &#125;</div><div class="line">    <span class="keyword">for</span> (;;) &#123;</div><div class="line">      <span class="keyword">int</span> A = <span class="number">0</span>, B = <span class="number">0</span>;</div><div class="line">      <span class="keyword">int</span> tmp;</div><div class="line">      <span class="keyword">for</span> (<span class="keyword">int</span> i = <span class="number">0</span>; i &lt; n; ++i) &#123;</div><div class="line">        <span class="built_in">cin</span> &gt;&gt; b[i];</div><div class="line">        <span class="keyword">if</span> (b[i] == a[i])A++;</div><div class="line">      &#125;</div><div class="line">      <span class="keyword">if</span>(b[<span class="number">0</span>]==<span class="number">0</span>)<span class="keyword">break</span>;</div><div class="line">      <span class="keyword">for</span> (<span class="keyword">int</span> i = <span class="number">0</span>; i &lt; <span class="number">10</span>; ++i) &#123;</div><div class="line">        <span class="keyword">int</span> b1 = <span class="number">0</span>, b2 = <span class="number">0</span>;</div><div class="line">        <span class="keyword">for</span> (<span class="keyword">int</span> j=<span class="number">0</span>;j&lt;n;j++)</div><div class="line">          <span class="keyword">if</span> (a[j] == i)b1++;</div><div class="line">        <span class="keyword">for</span> (<span class="keyword">int</span> j=<span class="number">0</span>;j&lt;n;j++)</div><div class="line">          <span class="keyword">if</span> (b[j] == i)b2++;</div><div class="line">        b1 &lt; b2 ? B += b1 : B += b2;</div><div class="line">      &#125;</div><div class="line">      <span class="built_in">printf</span>(<span class="string">"    (%d,%d)\n"</span>, A, B - A);</div><div class="line">    &#125;</div><div class="line">  &#125;</div><div class="line">  <span class="keyword">return</span> <span class="number">0</span>;</div><div class="line">&#125;</div></pre></td></tr></table></figure>
+</blockquote>
+<h4 id="E-Digit-Generator"><a href="#E-Digit-Generator" class="headerlink" title="E - Digit Generator"></a>E - Digit Generator</h4><p><a href="https://vjudge.net/contest/192174#problem/E" target="_blank" rel="external">uva 1583</a></p>
+<blockquote>
+<figure class="highlight c++"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line"></div><div class="line"></div></pre></td></tr></table></figure>
+</blockquote>
+<h4 id="F-Circular-Sequence"><a href="#F-Circular-Sequence" class="headerlink" title="F - Circular Sequence"></a>F - Circular Sequence</h4><p><a href="https://vjudge.net/contest/192174#problem/F" target="_blank" rel="external">uva 1584</a></p>
+<blockquote>
+<figure class="highlight c++"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line"></div><div class="line"></div></pre></td></tr></table></figure>
+</blockquote>
+
+          
+        
+      
+    </div>
+    
+    
+    
+
+    
+
+    
+
+    
+
+    <footer class="post-footer">
+      
+
+      
+
+      
+
+      
+      
+        <div class="post-eof"></div>
+      
+    </footer>
+  </div>
+  
+  
+  
+  </article>
+
+
+    
+      
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2017/10/13/aoapc/aoapc-6-egs/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="benenzhu">
+      <meta itemprop="description" content="">
+      <meta itemprop="image" content="/images/avatar.gif">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="benenzhu | a cute pig">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+                
+                <a class="post-title-link" href="/2017/10/13/aoapc/aoapc-6-egs/" itemprop="url">aoapc_$6_egs basic data structures(under construction)</a></h1>
         
 
         <div class="post-meta">
@@ -812,7 +956,7 @@
 <p>use stack to store the rails:<br>use rail for comming rails<br>and use target for output  <br><br>
           <!--noindex-->
           <div class="post-button text-center">
-            <a class="btn" href="/2017/10/13/aoapc-6-egs/#more" rel="contents">
+            <a class="btn" href="/2017/10/13/aoapc/aoapc-6-egs/#more" rel="contents">
               Read more &raquo;
             </a>
           </div>
@@ -1272,7 +1416,7 @@
               
                 <a href="/archives/">
               
-                  <span class="site-state-item-count">8</span>
+                  <span class="site-state-item-count">9</span>
                   <span class="site-state-item-name">posts</span>
                 </a>
               </div>
