@@ -1371,132 +1371,6 @@ int 21;
 
 
     
-      
-
-  
-
-  
-  
-  
-
-  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
-  
-  
-  
-  <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2017/10/09/assembly/assembly/">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="name" content="benenzhu">
-      <meta itemprop="description" content="">
-      <meta itemprop="image" content="/images/avatar.gif">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="benenzhu | a cute pig">
-    </span>
-
-    
-      <header class="post-header">
-
-        
-        
-          <h1 class="post-title" itemprop="name headline">
-                
-                <a class="post-title-link" href="/2017/10/09/assembly/assembly/" itemprop="url">asm(under construction)</a></h1>
-        
-
-        <div class="post-meta">
-          <span class="post-time">
-            
-              <span class="post-meta-item-icon">
-                <i class="fa fa-calendar-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">Posted on</span>
-              
-              <time title="Post created" itemprop="dateCreated datePublished" datetime="2017-10-09T21:15:29+08:00">
-                2017-10-09
-              </time>
-            
-
-            
-
-            
-          </span>
-
-          
-
-          
-            
-          
-
-          
-          
-
-          
-
-          
-
-          
-
-        </div>
-      </header>
-    
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-
-      
-      
-
-      
-        
-          
-            <figure class="highlight x86asm"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div></pre></td><td class="code"><pre><div class="line"><span class="comment">;change top at the stack to ax,bx</span></div><div class="line"><span class="meta">assume</span> <span class="built_in">cs</span>:code </div><div class="line">&lt;!-- more --&gt;</div><div class="line">code <span class="meta">segment</span> </div><div class="line"><span class="keyword">mov</span> <span class="built_in">ax</span>,<span class="number">2000h</span></div><div class="line"><span class="keyword">mov</span> <span class="built_in">ss</span>,<span class="built_in">ax</span></div><div class="line"><span class="keyword">mov</span> <span class="built_in">sp</span>,<span class="number">0</span></div><div class="line"><span class="keyword">add</span> <span class="built_in">sp</span>,<span class="number">10</span></div><div class="line"><span class="keyword">pop</span> <span class="built_in">ax</span></div><div class="line"><span class="keyword">pop</span> <span class="built_in">bx</span></div><div class="line"><span class="keyword">push</span> <span class="built_in">ax</span></div><div class="line"><span class="keyword">push</span> <span class="built_in">bx</span></div><div class="line"><span class="keyword">pop</span> <span class="built_in">ax</span> </div><div class="line"><span class="keyword">pop</span> <span class="built_in">bx</span></div><div class="line"></div><div class="line"><span class="keyword">mov</span> <span class="number">ah</span>,<span class="number">4ch</span></div><div class="line"><span class="keyword">int</span> <span class="number">21h</span></div><div class="line">code ends</div><div class="line">end</div></pre></td></tr></table></figure>
-<figure class="highlight x86asm"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div></pre></td><td class="code"><pre><div class="line"><span class="comment">;calculate 2^11 into ax</span></div><div class="line"><span class="meta">assume</span> <span class="built_in">cs</span>:code</div><div class="line">code <span class="meta">segment</span> </div><div class="line"></div><div class="line"><span class="keyword">mov</span> <span class="built_in">ax</span>,<span class="number">2h</span></div><div class="line"><span class="keyword">mov</span> <span class="built_in">cx</span>,<span class="number">3</span></div><div class="line"><span class="symbol">s:</span><span class="keyword">add</span> <span class="built_in">ax</span>,<span class="built_in">ax</span></div><div class="line"><span class="keyword">loop</span> s</div><div class="line"><span class="keyword">mov</span> <span class="number">ah</span>,<span class="number">4ch</span></div><div class="line"><span class="keyword">int</span> <span class="number">21h</span></div><div class="line">code ends</div><div class="line">end</div></pre></td></tr></table></figure>
-<figure class="highlight x86asm"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div></pre></td><td class="code"><pre><div class="line"></div><div class="line"><span class="comment">;calculate the ffff:6 's ^8;</span></div><div class="line"></div><div class="line"><span class="meta">assume</span> <span class="built_in">cs</span>:code</div><div class="line">code <span class="meta">segment</span></div><div class="line"></div><div class="line"><span class="keyword">mov</span> <span class="built_in">ax</span>,<span class="number">0ffffh</span></div><div class="line"><span class="keyword">mov</span> <span class="built_in">ds</span>,<span class="built_in">ax</span></div><div class="line"><span class="keyword">mov</span> <span class="built_in">al</span>,[<span class="number">6</span>]</div><div class="line"><span class="keyword">mov</span> <span class="number">ah</span>,<span class="number">0</span></div><div class="line"><span class="keyword">mov</span> <span class="built_in">dx</span>,<span class="number">0</span></div><div class="line"><span class="keyword">mov</span> <span class="built_in">cx</span>,<span class="number">3</span></div><div class="line"><span class="symbol">s:</span><span class="keyword">add</span> <span class="built_in">dx</span>,<span class="built_in">ax</span></div><div class="line"><span class="keyword">loop</span> s</div><div class="line"></div><div class="line"><span class="keyword">mov</span> <span class="number">ah</span>,<span class="number">4ch</span></div><div class="line"><span class="keyword">int</span> <span class="number">21h</span></div><div class="line">code ends</div><div class="line">end</div></pre></td></tr></table></figure>
-<figure class="highlight x86asm"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div></pre></td><td class="code"><pre><div class="line"></div><div class="line"><span class="comment">;calculate 256^126 </span></div><div class="line"></div><div class="line"><span class="meta">assume</span> <span class="built_in">cs</span>:code </div><div class="line">code <span class="meta">segment</span> </div><div class="line"><span class="keyword">mov</span> <span class="built_in">ax</span>,<span class="number">256</span></div><div class="line"><span class="keyword">mov</span> <span class="built_in">cx</span>,<span class="number">126</span></div><div class="line"></div><div class="line"><span class="keyword">mov</span> <span class="built_in">dx</span>,<span class="number">0</span></div><div class="line"><span class="symbol">s:</span><span class="keyword">add</span> <span class="built_in">dx</span>,<span class="built_in">ax</span></div><div class="line"><span class="keyword">loop</span> s</div><div class="line"><span class="keyword">mov</span> <span class="number">ah</span>,<span class="number">4ch</span></div><div class="line"><span class="keyword">int</span> <span class="number">21h</span></div><div class="line">code ends</div><div class="line">end</div></pre></td></tr></table></figure>
-<figure class="highlight x86asm"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div><div class="line">25</div><div class="line">26</div><div class="line">27</div><div class="line">28</div><div class="line">29</div><div class="line">30</div><div class="line">31</div><div class="line">32</div><div class="line">33</div><div class="line">34</div><div class="line">35</div><div class="line">36</div><div class="line">37</div></pre></td><td class="code"><pre><div class="line"><span class="comment">;calculate the ((x+y)*8-x)/2</span></div><div class="line"><span class="comment">;assume x=4,y=5</span></div><div class="line"></div><div class="line">data <span class="meta">segment</span></div><div class="line">x <span class="built_in">db</span> <span class="number">4</span></div><div class="line">y <span class="built_in">db</span> <span class="number">5</span></div><div class="line">z <span class="built_in">db</span> ?</div><div class="line">z1 <span class="built_in">db</span> ?</div><div class="line">data ends</div><div class="line"></div><div class="line">code <span class="meta">segment</span> </div><div class="line"><span class="meta">assume</span> <span class="built_in">cs</span>:code,<span class="built_in">ds</span>:data</div><div class="line"></div><div class="line"><span class="symbol">start:</span></div><div class="line"></div><div class="line"><span class="keyword">mov</span> <span class="built_in">ax</span>,data</div><div class="line"><span class="keyword">mov</span> <span class="built_in">ds</span>,<span class="built_in">ax</span></div><div class="line"></div><div class="line"><span class="keyword">mov</span> <span class="built_in">al</span>,x</div><div class="line"><span class="keyword">add</span> <span class="built_in">al</span>,y</div><div class="line"><span class="keyword">mov</span> <span class="built_in">bl</span>,<span class="number">8</span></div><div class="line"><span class="keyword">imul</span> <span class="built_in">bl</span></div><div class="line"></div><div class="line"><span class="keyword">mov</span> <span class="built_in">bl</span>,x</div><div class="line"><span class="keyword">mov</span> <span class="number">bh</span>,<span class="number">0</span></div><div class="line"><span class="keyword">sub</span> <span class="built_in">ax</span>,<span class="built_in">bx</span></div><div class="line"></div><div class="line"><span class="keyword">mov</span> <span class="built_in">bl</span>,<span class="number">2</span></div><div class="line"><span class="keyword">idiv</span> <span class="built_in">bl</span></div><div class="line"></div><div class="line"><span class="keyword">mov</span> z,<span class="built_in">al</span></div><div class="line"><span class="keyword">mov</span> z1,<span class="number">ah</span></div><div class="line"></div><div class="line"><span class="keyword">mov</span> <span class="number">ah</span>,<span class="number">4ch</span></div><div class="line"><span class="keyword">int</span> <span class="number">21h</span></div><div class="line">code ends </div><div class="line">end start</div></pre></td></tr></table></figure>
-<figure class="highlight x86asm"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div><div class="line">25</div><div class="line">26</div><div class="line">27</div><div class="line">28</div><div class="line">29</div><div class="line">30</div><div class="line">31</div><div class="line">32</div><div class="line">33</div><div class="line">34</div><div class="line">35</div></pre></td><td class="code"><pre><div class="line"><span class="comment">;add some things form the input file;</span></div><div class="line"><span class="comment">;output x=x+1;</span></div><div class="line">data <span class="meta">segment</span> </div><div class="line">	mess1 <span class="built_in">db</span> <span class="string">'Input x:'</span>,<span class="string">'$'</span></div><div class="line">	mess2 <span class="built_in">db</span> <span class="number">0ah</span>,<span class="number">0dh</span>,<span class="string">'Output y:$'</span> <span class="comment">;0ah+0dh=/n</span></div><div class="line">	y <span class="built_in">db</span> ?</div><div class="line">data ends</div><div class="line"></div><div class="line">code <span class="meta">segment</span> </div><div class="line"><span class="meta">assume</span> <span class="built_in">cs</span>:code,<span class="built_in">ds</span>:data</div><div class="line"></div><div class="line"><span class="symbol">start:</span></div><div class="line">	<span class="keyword">mov</span> <span class="built_in">ax</span>,data</div><div class="line">	<span class="keyword">mov</span> <span class="built_in">ds</span>,<span class="built_in">ax</span></div><div class="line">	<span class="keyword">mov</span> <span class="built_in">dx</span>,offset mess1 </div><div class="line">	<span class="keyword">mov</span> <span class="number">ah</span>,<span class="number">9</span> <span class="comment">;no.9 output a string</span></div><div class="line">	<span class="keyword">int</span> <span class="number">21h</span></div><div class="line"></div><div class="line">	<span class="keyword">mov</span> <span class="number">ah</span>,<span class="number">1</span> <span class="comment">;no.1 input a char</span></div><div class="line">	<span class="keyword">int</span> <span class="number">21h</span></div><div class="line"></div><div class="line">	<span class="keyword">add</span> <span class="built_in">al</span>,<span class="number">1</span></div><div class="line">	<span class="keyword">mov</span> y,<span class="built_in">al</span></div><div class="line">	<span class="keyword">mov</span> <span class="built_in">dx</span>,offset mess2</div><div class="line">	<span class="keyword">mov</span> <span class="number">ah</span>,<span class="number">9</span> </div><div class="line">	<span class="keyword">int</span> <span class="number">21h</span></div><div class="line"></div><div class="line">	<span class="keyword">mov</span> <span class="number">ah</span>,<span class="number">2</span> <span class="comment">;no.2 output a char</span></div><div class="line">	<span class="keyword">mov</span> <span class="built_in">dl</span>,y</div><div class="line">	<span class="keyword">int</span> <span class="number">21h</span></div><div class="line"></div><div class="line">	<span class="keyword">mov</span> <span class="built_in">ax</span>,<span class="number">4c00h</span></div><div class="line">	<span class="keyword">int</span> <span class="number">21h</span></div><div class="line">code ends</div><div class="line">end start</div></pre></td></tr></table></figure>
-<figure class="highlight x86asm"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div><div class="line">25</div><div class="line">26</div><div class="line">27</div><div class="line">28</div><div class="line">29</div><div class="line">30</div><div class="line">31</div><div class="line">32</div><div class="line">33</div><div class="line">34</div><div class="line">35</div><div class="line">36</div><div class="line">37</div><div class="line">38</div></pre></td><td class="code"><pre><div class="line"></div><div class="line"><span class="comment">;use the modle samll code </span></div><div class="line"><span class="comment">;to add the numbers and output it in shell like </span></div><div class="line"><span class="comment">;blue fore and yellow back </span></div><div class="line"><span class="meta">.model</span> small</div><div class="line"><span class="meta">.stack</span> <span class="number">100h</span></div><div class="line"><span class="meta">.code</span></div><div class="line"><span class="symbol">start:</span></div><div class="line">	<span class="keyword">mov</span> <span class="number">ah</span>,<span class="number">1</span> <span class="comment">;no.1 input a char</span></div><div class="line">	<span class="keyword">int</span> <span class="number">21h</span></div><div class="line">	<span class="keyword">mov</span> <span class="built_in">bl</span>,<span class="built_in">al</span> <span class="comment">;save number </span></div><div class="line">	<span class="keyword">int</span> <span class="number">21h</span></div><div class="line">	<span class="keyword">add</span> <span class="built_in">al</span>,<span class="built_in">bl</span> <span class="comment">;add</span></div><div class="line">	<span class="keyword">mov</span> <span class="number">ah</span>,<span class="number">0</span></div><div class="line">	<span class="keyword">aaa</span>   <span class="comment">;??</span></div><div class="line">	<span class="keyword">add</span> <span class="built_in">ax</span>,<span class="number">3030h</span> <span class="comment">;add to ASCII</span></div><div class="line">	<span class="keyword">mov</span> <span class="built_in">si</span>,<span class="built_in">ax</span> </div><div class="line">	<span class="keyword">mov</span> <span class="built_in">ax</span>,<span class="number">0b800h</span> <span class="comment">;graph card start</span></div><div class="line">	</div><div class="line">	<span class="keyword">mov</span> <span class="built_in">es</span>,<span class="built_in">ax</span></div><div class="line">	<span class="keyword">mov</span> <span class="number">ah</span>,<span class="number">3</span> <span class="comment">;int 10h crusor</span></div><div class="line">	<span class="keyword">mov</span> <span class="number">bh</span>,<span class="number">0</span></div><div class="line">	<span class="keyword">int</span> <span class="number">10h</span></div><div class="line">	<span class="keyword">mov</span> <span class="built_in">al</span>,<span class="number">160</span> <span class="comment">;line *160</span></div><div class="line">	<span class="keyword">mul</span> <span class="number">dh</span></div><div class="line">	<span class="keyword">mov</span> <span class="number">dh</span>,<span class="number">0</span></div><div class="line">	<span class="keyword">shl</span> <span class="built_in">dl</span>,<span class="number">1</span> <span class="comment">;col*2</span></div><div class="line">	<span class="keyword">add</span> <span class="built_in">ax</span>,<span class="built_in">dx</span> <span class="comment">;add</span></div><div class="line">	<span class="keyword">mov</span> <span class="built_in">bx</span>,<span class="built_in">ax</span></div><div class="line">	<span class="keyword">mov</span> <span class="built_in">ax</span>,<span class="built_in">si</span></div><div class="line">	<span class="keyword">mov</span> <span class="built_in">byte</span> <span class="built_in">ptr</span> <span class="built_in">es</span>:[<span class="built_in">bx</span>+<span class="number">0</span>],<span class="number">3dh</span> <span class="comment">;show '='</span></div><div class="line">	<span class="keyword">mov</span> <span class="built_in">es</span>:[<span class="built_in">bx</span>+<span class="number">2</span>],<span class="number">ah</span>		<span class="comment">;show the number</span></div><div class="line">	<span class="keyword">mov</span> <span class="built_in">byte</span> <span class="built_in">ptr</span> <span class="built_in">es</span>:[<span class="built_in">bx</span>+<span class="number">3</span>],<span class="number">1eh</span></div><div class="line">	<span class="keyword">mov</span> <span class="built_in">es</span>:[<span class="built_in">bx</span>+<span class="number">4</span>],<span class="built_in">al</span></div><div class="line">	<span class="keyword">mov</span> <span class="built_in">byte</span> <span class="built_in">ptr</span> <span class="built_in">es</span>:[<span class="built_in">bx</span>+<span class="number">5</span>],<span class="number">1eh</span></div><div class="line">	<span class="keyword">mov</span> <span class="number">ah</span>,<span class="number">4ch</span></div><div class="line">	<span class="keyword">int</span> <span class="number">21</span><span class="comment">;</span></div><div class="line">end start</div></pre></td></tr></table></figure>
-<figure class="highlight x86asm"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line"></div><div class="line"></div></pre></td></tr></table></figure>
-          
-        
-      
-    </div>
-    
-    
-    
-
-    
-
-    
-
-    
-
-    <footer class="post-footer">
-      
-
-      
-
-      
-
-      
-      
-        <div class="post-eof"></div>
-      
-    </footer>
-  </div>
-  
-  
-  
-  </article>
-
-
-    
   </section>
 
   
@@ -1543,7 +1417,7 @@ int 21;
               
                 <a href="/archives/">
               
-                  <span class="site-state-item-count">10</span>
+                  <span class="site-state-item-count">9</span>
                   <span class="site-state-item-name">posts</span>
                 </a>
               </div>
