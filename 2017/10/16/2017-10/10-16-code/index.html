@@ -79,18 +79,18 @@
 
 
 
-<meta name="description" content="10-16_code.mdthe next_permutation’s use for it12345678910111213141516int main()&amp;#123;  fi;  int n,p[10];  n=5;  for (int i = 0; i &amp;lt; n; ++i) &amp;#123;    scanf(&quot;%d&quot;,p+i);  &amp;#125;  sort(p,p+5);  do&amp;#123">
+<meta name="description" content="10-16_code.mdthe next_permutation’s use for it">
 <meta name="keywords" content="code_today">
 <meta property="og:type" content="article">
 <meta property="og:title" content="10-16_code">
 <meta property="og:url" content="http://yoursite.com/2017/10/16/2017-10/10-16-code/index.html">
 <meta property="og:site_name" content="benenzhu | a cute pig">
-<meta property="og:description" content="10-16_code.mdthe next_permutation’s use for it12345678910111213141516int main()&amp;#123;  fi;  int n,p[10];  n=5;  for (int i = 0; i &amp;lt; n; ++i) &amp;#123;    scanf(&quot;%d&quot;,p+i);  &amp;#125;  sort(p,p+5);  do&amp;#123">
+<meta property="og:description" content="10-16_code.mdthe next_permutation’s use for it">
 <meta property="og:locale" content="en">
-<meta property="og:updated_time" content="2017-10-16T16:24:36.090Z">
+<meta property="og:updated_time" content="2017-10-17T14:01:54.853Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="10-16_code">
-<meta name="twitter:description" content="10-16_code.mdthe next_permutation’s use for it12345678910111213141516int main()&amp;#123;  fi;  int n,p[10];  n=5;  for (int i = 0; i &amp;lt; n; ++i) &amp;#123;    scanf(&quot;%d&quot;,p+i);  &amp;#125;  sort(p,p+5);  do&amp;#123">
+<meta name="twitter:description" content="10-16_code.mdthe next_permutation’s use for it">
 
 
 
@@ -315,7 +315,8 @@
       
 
       
-        <h1 id="10-16-code-md"><a href="#10-16-code-md" class="headerlink" title="10-16_code.md"></a>10-16_code.md</h1><h4 id="the-next-permutation’s-use-for-it"><a href="#the-next-permutation’s-use-for-it" class="headerlink" title="the next_permutation’s use for it"></a>the next_permutation’s use for it</h4><figure class="highlight c++"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div></pre></td><td class="code"><pre><div class="line"><span class="function"><span class="keyword">int</span> <span class="title">main</span><span class="params">()</span></span>&#123;</div><div class="line">  fi;</div><div class="line">  <span class="keyword">int</span> n,p[<span class="number">10</span>];</div><div class="line">  n=<span class="number">5</span>;</div><div class="line">  <span class="keyword">for</span> (<span class="keyword">int</span> i = <span class="number">0</span>; i &lt; n; ++i) &#123;</div><div class="line">    <span class="built_in">scanf</span>(<span class="string">"%d"</span>,p+i);</div><div class="line">  &#125;</div><div class="line">  sort(p,p+<span class="number">5</span>);</div><div class="line">  <span class="keyword">do</span>&#123;</div><div class="line">    <span class="keyword">for</span> (<span class="keyword">int</span> i = <span class="number">0</span>; i &lt; n; ++i) &#123;</div><div class="line">      <span class="built_in">printf</span>(<span class="string">"%d "</span>,p[i]);</div><div class="line">    &#125;</div><div class="line">    <span class="built_in">cout</span>&lt;&lt;<span class="built_in">endl</span>;</div><div class="line">  &#125;<span class="keyword">while</span>(next_permutation(p,p+n));</div><div class="line">  <span class="keyword">return</span> <span class="number">0</span>;</div><div class="line">&#125;</div></pre></td></tr></table></figure>
+        <h1 id="10-16-code-md"><a href="#10-16-code-md" class="headerlink" title="10-16_code.md"></a>10-16_code.md</h1><h4 id="the-next-permutation’s-use-for-it"><a href="#the-next-permutation’s-use-for-it" class="headerlink" title="the next_permutation’s use for it"></a>the next_permutation’s use for it</h4><a id="more"></a>
+<figure class="highlight c++"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div></pre></td><td class="code"><pre><div class="line"><span class="function"><span class="keyword">int</span> <span class="title">main</span><span class="params">()</span></span>&#123;</div><div class="line">  fi;</div><div class="line">  <span class="keyword">int</span> n,p[<span class="number">10</span>];</div><div class="line">  n=<span class="number">5</span>;</div><div class="line">  <span class="keyword">for</span> (<span class="keyword">int</span> i = <span class="number">0</span>; i &lt; n; ++i) &#123;</div><div class="line">    <span class="built_in">scanf</span>(<span class="string">"%d"</span>,p+i);</div><div class="line">  &#125;</div><div class="line">  sort(p,p+<span class="number">5</span>);</div><div class="line">  <span class="keyword">do</span>&#123;</div><div class="line">    <span class="keyword">for</span> (<span class="keyword">int</span> i = <span class="number">0</span>; i &lt; n; ++i) &#123;</div><div class="line">      <span class="built_in">printf</span>(<span class="string">"%d "</span>,p[i]);</div><div class="line">    &#125;</div><div class="line">    <span class="built_in">cout</span>&lt;&lt;<span class="built_in">endl</span>;</div><div class="line">  &#125;<span class="keyword">while</span>(next_permutation(p,p+n));</div><div class="line">  <span class="keyword">return</span> <span class="number">0</span>;</div><div class="line">&#125;</div></pre></td></tr></table></figure>
       
     </div>
     
