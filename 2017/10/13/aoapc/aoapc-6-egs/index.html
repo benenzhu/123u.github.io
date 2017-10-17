@@ -87,7 +87,7 @@
 <meta property="og:site_name" content="benenzhu | a cute pig">
 <meta property="og:description" content="link on vjudge eg1">
 <meta property="og:locale" content="en">
-<meta property="og:updated_time" content="2017-10-17T14:01:54.870Z">
+<meta property="og:updated_time" content="2017-10-17T16:41:38.781Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="aoapc_$6_egs basic data structures(under construction)">
 <meta name="twitter:description" content="link on vjudge eg1">
@@ -323,26 +323,6 @@
 <h2 id="eg3-Matrix-Chain-Multiplication-using-stack-for-expresion-analysis"><a href="#eg3-Matrix-Chain-Multiplication-using-stack-for-expresion-analysis" class="headerlink" title="eg3 Matrix Chain Multiplication using stack for expresion analysis"></a>eg3 Matrix Chain Multiplication<br> using stack for expresion analysis</h2><blockquote>
 <p>use tatck to store the Matrix<br>build a Matrix struct<br>when encountered letters push<br>when encountered right brackets calculation and then push<br>when input may be illegal need the brackets to push into the stack</p>
 </blockquote>
-<p>;use the modle samll code<br>;to add the numbers and output it in shell like<br>;blue fore and yellow back<br>.model small<br>.stack 100h<br>.code<br>start:<br>    mov ah,1 ;no.1 input a char<br>    int 21h<br>    mov bl,al ;save number<br>    int 21h<br>    add al,bl ;add<br>    mov ah,0<br>    aaa   ;??<br>    add ax,3030h ;add to ASCII<br>    mov si,ax<br>    mov ax,0b800h ;graph card start</p>
-<pre><code>mov es,ax
-mov ah,3 ;int 10h crusor
-mov bh,0
-int 10h
-mov al,160 ;line *160
-mul dh
-mov dh,0
-shl dl,1 ;col*2
-add ax,dx ;add
-mov bx,ax
-mov ax,si
-mov byte ptr es:[bx+0],3dh ;show &apos;=&apos;
-mov es:[bx+2],ah        ;show the number
-mov byte ptr es:[bx+3],1eh
-mov es:[bx+4],al
-mov byte ptr es:[bx+5],1eh
-mov ah,4ch
-int 21;
-</code></pre><p>end start   </p>
 
       
     </div>
@@ -462,7 +442,7 @@ int 21;
               
                 <a href="/archives/">
               
-                  <span class="site-state-item-count">12</span>
+                  <span class="site-state-item-count">11</span>
                   <span class="site-state-item-name">posts</span>
                 </a>
               </div>
